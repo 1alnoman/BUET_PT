@@ -1,0 +1,73 @@
+<,VOID>
+<ID, main>
+<LPAREN, (>
+<RPAREN, )>
+<LCURL, {>
+<,INT>
+<ID, x>
+<COMMA, ,>
+<ID, y>
+<SEMICOLON, ;>
+<ID, x>
+<ASSIGNOP, =>
+<ID, x>
+<ADDOP, +>
+<CONST_INT, 1>
+<SEMICOLON, ;>
+<ID, y>
+<ASSIGNOP, =>
+<ID, y>
+<MULOP, *>
+<CONST_INT, 2>
+<SEMICOLON, ;>
+<,FLOAT>
+<ID, f>
+<SEMICOLON, ;>
+<ID, f>
+<ASSIGNOP, =>
+<ID, f>
+<ADDOP, ->
+<CONST_FLOAT, 3.14>
+<SEMICOLON, ;>
+<ID, f>
+<ASSIGNOP, =>
+<ID, f>
+<MULOP, *>
+<CONST_FLOAT, 2.81E0>
+<SEMICOLON, ;>
+<ID, u>
+<ASSIGNOP, =>
+<ID, v>
+<RELOP, <>
+<RELOP, <>
+<CONST_INT, 2>
+<RELOP, >>
+<RELOP, >>
+<CONST_INT, 3>
+<CONST_INT, 4>
+<,CHAR>
+<ID, ch>
+<ASSIGNOP, =>
+<CONST_CHAR, z>
+<SEMICOLON, ;>
+<ID, ch>
+<ASSIGNOP, =>
+<CONST_CHAR, 	>
+<SEMICOLON, ;>
+<,CHAR>
+<ID, str>
+<LTHIRD, [>
+<RTHIRD, ]>
+<ASSIGNOP, =>
+<STRING, "hello	world">
+<SEMICOLON, ;>
+<ID, printf>
+<LPAREN, (>
+<STRING, "The day	was	sunny">
+<RPAREN, )>
+<SEMICOLON, ;>
+<,RETURN>
+<CONST_INT, 0>
+<SEMICOLON, ;>
+<RCURL, 
+}>
