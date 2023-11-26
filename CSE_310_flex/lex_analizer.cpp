@@ -599,7 +599,7 @@ int line_count=1;
 int error_count=0;
 int initial_line;
 
-int numspace(char* str) {
+int numtab(char* str) {
     int size_str = strlen(str);
     int cnt = 0;
 
@@ -612,7 +612,7 @@ int numspace(char* str) {
 }
 
 void check_tab_warning(char *ch) {
-    int n_tab = numspace(yytext);
+    int n_tab = numtab(yytext);
 	if(n_tab != prev_tabs) {
 		flog<<"Line no "<<line_count<<": warning, "<<prev_tabs<<" of tabs needed but got "<<n_tab<<" tabs.\n"<<endl;
 	}
