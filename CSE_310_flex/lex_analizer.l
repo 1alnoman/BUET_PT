@@ -35,9 +35,6 @@ int numtab(char* str) {
         if(str[i] == '\t') {
             cnt++;
         }
-        else if(str[i] == '\n') {
-            line_count++;
-        }
     }
     return cnt;
 }
@@ -48,6 +45,16 @@ void check_tab_warning(char *ch) {
 		flog<<"Line no "<<line_count<<": warning, "<<prev_tabs<<" of tabs needed but got "<<n_tab<<" tabs.\n"<<endl;
 	}
 
+}
+
+void increaseLineNo(char* str) {
+    int size_str = strlen(str);
+
+    for(int i=0;i<size_str;i++) {
+        if(str[i] == '\n') {
+            line_count++;
+        }
+    }
 }
 
 void clearVar(){
@@ -167,9 +174,9 @@ error_empty_char \'\'
 [!] {printop("NOT");}
 [(] {printop("LPAREN");}
 [)] {printop("RPAREN");}
-"\n"+"\t"*"}" {prev_tabs--;check_tab_warning(yytext); printop("RCURL"); symboltable->Exit_Scope();}
-"\n"+"\t"* {check_tab_warning(yytext);}
-"\n"+"\t"*" "+"\t"* {check_tab_warning(yytext);; flog<<"Line no "<<line_count<<": Warning, tab requrired but got space.\n"<<endl;}
+"\n"+"\t"*"}" {prev_tabs--;increaseLineNo(yytext); check_tab_warning(yytext); printop("RCURL"); symboltable->Exit_Scope();}
+"\n"+"\t"* {increaseLineNo(yytext); check_tab_warning(yytext);}
+"\n"+"\t"*" "+"\t"* {increaseLineNo(yytext); flog<<"Line no "<<line_count<<": Warning, tab requrired but got space.\n"<<endl;}
 {ws}+ {}
 {newline} {line_count++;}
 [{] {printop("LCURL"); symboltable->Enter_Scope();prev_tabs++;}

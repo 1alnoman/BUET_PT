@@ -8,7 +8,7 @@ void main() {
 	f = f * 2.81E0;
 
 
- u=v<<2>>3^4
+ 	u=v<<2>>3^4
 	
 	  char ch = 'z';
 ch = '\t';
