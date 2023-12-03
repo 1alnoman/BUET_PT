@@ -35,6 +35,9 @@ int numtab(char* str) {
         if(str[i] == '\t') {
             cnt++;
         }
+        else if(str[i] == '\n') {
+            line_count++;
+        }
     }
     return cnt;
 }
@@ -164,9 +167,9 @@ error_empty_char \'\'
 [!] {printop("NOT");}
 [(] {printop("LPAREN");}
 [)] {printop("RPAREN");}
-"\n"+"\t"*"}" {prev_tabs--;line_count++;check_tab_warning(yytext); printop("RCURL"); symboltable->Exit_Scope();}
-"\n"+"\t"* {line_count++;check_tab_warning(yytext);}
-"\n"+"\t"*" "*"\t"* {line_count++; flog<<"Line no "<<line_count<<": Warning, tab requrired but got space.\n"<<endl;}
+"\n"+"\t"*"}" {prev_tabs--;check_tab_warning(yytext); printop("RCURL"); symboltable->Exit_Scope();}
+"\n"+"\t"* {check_tab_warning(yytext);}
+"\n"+"\t"*" "*"\t"* {check_tab_warning(yytext);; flog<<"Line no "<<line_count<<": Warning, tab requrired but got space.\n"<<endl;}
 {ws}+ {}
 {newline} {line_count++;}
 [{] {printop("LCURL"); symboltable->Enter_Scope();prev_tabs++;}

@@ -140,9 +140,9 @@ ScopeTable # 1
 
 Line no 8: Token <SEMICOLON> Lexeme ; found
 
-Line no 9: Warning, tab requrired but got space.
+Line no 11: Warning, tab requrired but got space.
 
-Line no 9: Token <ID> Lexeme u found
+Line no 11: Token <ID> Lexeme u found
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> 
@@ -155,9 +155,9 @@ ScopeTable # 1.1
 ScopeTable # 1
  1 --> < main : ID> 
 
-Line no 9: Token <ASSIGNOP> Lexeme = found
+Line no 11: Token <ASSIGNOP> Lexeme = found
 
-Line no 9: Token <ID> Lexeme v found
+Line no 11: Token <ID> Lexeme v found
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> 
@@ -171,18 +171,18 @@ ScopeTable # 1.1
 ScopeTable # 1
  1 --> < main : ID> 
 
-Line no 9: Token <RELOP> Lexeme < found
+Line no 11: Token <RELOP> Lexeme < found
 
-Line no 9: Token <RELOP> Lexeme < found
+Line no 11: Token <RELOP> Lexeme < found
 
-Line no 9: Token <CONST_INT> Lexeme 2 found
+Line no 11: Token <CONST_INT> Lexeme 2 found
 
 2 already exists in current ScopeTable
-Line no 9: Token <RELOP> Lexeme > found
+Line no 11: Token <RELOP> Lexeme > found
 
-Line no 9: Token <RELOP> Lexeme > found
+Line no 11: Token <RELOP> Lexeme > found
 
-Line no 9: Token <CONST_INT> Lexeme 3 found
+Line no 11: Token <CONST_INT> Lexeme 3 found
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> 
@@ -197,8 +197,8 @@ ScopeTable # 1
  1 --> < main : ID> 
 
 
-Error at line no 9: Unrecognized character ^
-Line no 9: Token <CONST_INT> Lexeme 4 found
+Error at line no 11: Unrecognized character ^
+Line no 11: Token <CONST_INT> Lexeme 4 found
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> 
@@ -212,11 +212,11 @@ ScopeTable # 1.1
 ScopeTable # 1
  1 --> < main : ID> 
 
-Line no 11: Warning, tab requrired but got space.
+Line no 13: Warning, tab requrired but got space.
 
-Line no 11: Token <CHAR> Lexeme char found
+Line no 13: Token <CHAR> Lexeme char found
 
-Line no 11: Token <ID> Lexeme ch found
+Line no 13: Token <ID> Lexeme ch found
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> < ch : ID> 
@@ -230,9 +230,9 @@ ScopeTable # 1.1
 ScopeTable # 1
  1 --> < main : ID> 
 
-Line no 11: Token <ASSIGNOP> Lexeme = found
+Line no 13: Token <ASSIGNOP> Lexeme = found
 
-Line no 11: Token <CONST_CHAR> Lexeme 'z' found --> <CONST_CHAR, z> 
+Line no 13: Token <CONST_CHAR> Lexeme 'z' found --> <CONST_CHAR, z> 
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> < ch : ID> 
@@ -246,16 +246,16 @@ ScopeTable # 1.1
 ScopeTable # 1
  1 --> < main : ID> 
 
-Line no 11: Token <SEMICOLON> Lexeme ; found
+Line no 13: Token <SEMICOLON> Lexeme ; found
 
-Line no 12: warning, 1 of tabs needed but got 0 tabs.
+Line no 14: warning, 1 of tabs needed but got 0 tabs.
 
-Line no 12: Token <ID> Lexeme ch found
+Line no 14: Token <ID> Lexeme ch found
 
 ch already exists in current ScopeTable
-Line no 12: Token <ASSIGNOP> Lexeme = found
+Line no 14: Token <ASSIGNOP> Lexeme = found
 
-Line no 12: Token <CONST_CHAR> Lexeme '\t' found --> <CONST_CHAR, 	> 
+Line no 14: Token <CONST_CHAR> Lexeme '\t' found --> <CONST_CHAR, 	> 
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> < ch : ID> 
@@ -269,13 +269,13 @@ ScopeTable # 1.1
 ScopeTable # 1
  1 --> < main : ID> 
 
-Line no 12: Token <SEMICOLON> Lexeme ; found
+Line no 14: Token <SEMICOLON> Lexeme ; found
 
-Line no 14: warning, 1 of tabs needed but got 2 tabs.
+Line no 18: warning, 1 of tabs needed but got 2 tabs.
 
-Line no 14: Token <CHAR> Lexeme char found
+Line no 18: Token <CHAR> Lexeme char found
 
-Line no 14: Token <ID> Lexeme str found
+Line no 18: Token <ID> Lexeme str found
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> < ch : ID> 
@@ -289,19 +289,19 @@ ScopeTable # 1.1
 ScopeTable # 1
  1 --> < main : ID> 
 
-Line no 14: Token <LTHIRD> Lexeme [ found
+Line no 18: Token <LTHIRD> Lexeme [ found
 
-Line no 14: Token <RTHIRD> Lexeme ] found
+Line no 18: Token <RTHIRD> Lexeme ] found
 
-Line no 14: Token <ASSIGNOP> Lexeme = found
+Line no 18: Token <ASSIGNOP> Lexeme = found
 
-Line no 14: Token <STRING> Lexeme "hello\tworld" found --> <STRING, "hello	world"> 
+Line no 18: Token <STRING> Lexeme "hello\tworld" found --> <STRING, "hello	world"> 
 
-Line no 14: Token <SEMICOLON> Lexeme ; found
+Line no 18: Token <SEMICOLON> Lexeme ; found
 
-Line no 16: Token <COMMENT> Lexeme // December 3, 2022 found
+Line no 20: Token <COMMENT> Lexeme // December 3, 2022 found
 
-Line no 17: Token <ID> Lexeme printf found
+Line no 21: Token <ID> Lexeme printf found
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> < ch : ID> 
@@ -315,25 +315,25 @@ ScopeTable # 1.1
 ScopeTable # 1
  1 --> < main : ID> 
 
-Line no 17: Token <LPAREN> Lexeme ( found
+Line no 21: Token <LPAREN> Lexeme ( found
 
-Line no 17: Token <STRING> Lexeme "The day\
+Line no 21: Token <STRING> Lexeme "The day\
 	was\
 	sunny" found --> <STRING, "The day	was	sunny"> 
 
-Line no 19: Token <RPAREN> Lexeme ) found
+Line no 23: Token <RPAREN> Lexeme ) found
 
-Line no 19: Token <SEMICOLON> Lexeme ; found
+Line no 23: Token <SEMICOLON> Lexeme ; found
 
-Line no 21: Token <COMMENT> Lexeme /** ** CSE 310
+Line no 27: Token <COMMENT> Lexeme /** ** CSE 310
 	*** Compiler Sessional ***/ found
 
-Line no 23: Token <COMMENT> Lexeme // It is a\
+Line no 29: Token <COMMENT> Lexeme // It is a\
 	fun course found
 
-Line no 25: Token <RETURN> Lexeme return found
+Line no 31: Token <RETURN> Lexeme return found
 
-Line no 25: Token <CONST_INT> Lexeme 0 found
+Line no 31: Token <CONST_INT> Lexeme 0 found
 
 ScopeTable # 1.1
  0 --> < 1 : CONST_INT> < ch : ID> 
@@ -347,13 +347,13 @@ ScopeTable # 1.1
 ScopeTable # 1
  1 --> < main : ID> 
 
-Line no 25: Token <SEMICOLON> Lexeme ; found
+Line no 31: Token <SEMICOLON> Lexeme ; found
 
-Line no 26: Token <RCURL> Lexeme 
+Line no 32: Token <RCURL> Lexeme 
 } found
 
 ScopeTable # 1
  1 --> < main : ID> 
 
-Total lines: 26
+Total lines: 32
 Total errors: 1

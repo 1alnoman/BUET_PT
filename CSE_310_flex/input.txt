@@ -6,11 +6,15 @@ void main() {
 	float f;
 	f = f - 3.14;
 	f = f * 2.81E0;
+
+
 	 u=v<<2>>3^4
 	
 	 char ch = 'z';
 ch = '\t';
 	
+
+
 		char str[] = "hello\tworld";
 	
 	// December 3, 2022

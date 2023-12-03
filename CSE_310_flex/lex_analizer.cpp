@@ -607,6 +607,9 @@ int numtab(char* str) {
         if(str[i] == '\t') {
             cnt++;
         }
+        else if(str[i] == '\n') {
+            line_count++;
+        }
     }
     return cnt;
 }
@@ -698,9 +701,9 @@ void printComment(){
 
 
 
-#line 702 "lex_analizer.cpp"
+#line 705 "lex_analizer.cpp"
 /* specialchar [\n\t\\\'\a\f\r\b\v\0] */
-#line 704 "lex_analizer.cpp"
+#line 707 "lex_analizer.cpp"
 
 #define INITIAL 0
 #define COMMENT_STATE 1
@@ -920,10 +923,10 @@ YY_DECL
 		}
 
 	{
-#line 155 "lex_analizer.l"
+#line 158 "lex_analizer.l"
 
 
-#line 927 "lex_analizer.cpp"
+#line 930 "lex_analizer.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -982,122 +985,122 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 157 "lex_analizer.l"
+#line 160 "lex_analizer.l"
 {printop("INCOP");}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 158 "lex_analizer.l"
+#line 161 "lex_analizer.l"
 {printop("ADDOP");}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 159 "lex_analizer.l"
+#line 162 "lex_analizer.l"
 {printop("MULOP");}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 160 "lex_analizer.l"
+#line 163 "lex_analizer.l"
 {printop("RELOP");}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 161 "lex_analizer.l"
+#line 164 "lex_analizer.l"
 {printop("RELOP");}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 162 "lex_analizer.l"
+#line 165 "lex_analizer.l"
 {printop("ASSIGNOP");}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 163 "lex_analizer.l"
+#line 166 "lex_analizer.l"
 {printop("LOGICOP");}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 164 "lex_analizer.l"
+#line 167 "lex_analizer.l"
 {printop("NOT");}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 165 "lex_analizer.l"
+#line 168 "lex_analizer.l"
 {printop("LPAREN");}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 166 "lex_analizer.l"
+#line 169 "lex_analizer.l"
 {printop("RPAREN");}
 	YY_BREAK
 case 11:
 /* rule 11 can match eol */
 YY_RULE_SETUP
-#line 167 "lex_analizer.l"
-{prev_tabs--;line_count++;check_tab_warning(yytext); printop("RCURL"); symboltable->Exit_Scope();}
+#line 170 "lex_analizer.l"
+{prev_tabs--;check_tab_warning(yytext); printop("RCURL"); symboltable->Exit_Scope();}
 	YY_BREAK
 case 12:
 /* rule 12 can match eol */
 YY_RULE_SETUP
-#line 168 "lex_analizer.l"
-{line_count++;check_tab_warning(yytext);}
+#line 171 "lex_analizer.l"
+{check_tab_warning(yytext);}
 	YY_BREAK
 case 13:
 /* rule 13 can match eol */
 YY_RULE_SETUP
-#line 169 "lex_analizer.l"
-{line_count++; flog<<"Line no "<<line_count<<": Warning, tab requrired but got space.\n"<<endl;}
+#line 172 "lex_analizer.l"
+{check_tab_warning(yytext);; flog<<"Line no "<<line_count<<": Warning, tab requrired but got space.\n"<<endl;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 170 "lex_analizer.l"
+#line 173 "lex_analizer.l"
 {}
 	YY_BREAK
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 171 "lex_analizer.l"
+#line 174 "lex_analizer.l"
 {line_count++;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 172 "lex_analizer.l"
+#line 175 "lex_analizer.l"
 {printop("LCURL"); symboltable->Enter_Scope();prev_tabs++;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 173 "lex_analizer.l"
+#line 176 "lex_analizer.l"
 {printop("RCURL"); symboltable->Exit_Scope();prev_tabs--;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 174 "lex_analizer.l"
+#line 177 "lex_analizer.l"
 {printop("LTHIRD");}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 175 "lex_analizer.l"
+#line 178 "lex_analizer.l"
 {printop("RTHIRD");}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 176 "lex_analizer.l"
+#line 179 "lex_analizer.l"
 {printop("COMMA");}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 177 "lex_analizer.l"
+#line 180 "lex_analizer.l"
 {printop("SEMICOLON");}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 180 "lex_analizer.l"
+#line 183 "lex_analizer.l"
 { BEGIN COMMENT_STATE; commentOutput+=yytext; initial_line=line_count;}
 	YY_BREAK
 case 23:
 /* rule 23 can match eol */
 YY_RULE_SETUP
-#line 181 "lex_analizer.l"
+#line 184 "lex_analizer.l"
 {BEGIN INITIAL; printComment(); line_count++;commentOutput="";}
 	YY_BREAK
 case 24:
@@ -1105,53 +1108,53 @@ case 24:
 (yy_c_buf_p) = yy_cp -= 1;
 YY_DO_BEFORE_ACTION; /* set up yytext again */
 YY_RULE_SETUP
-#line 182 "lex_analizer.l"
+#line 185 "lex_analizer.l"
 {line_count++; commentOutput+=yytext; yyinput(); commentOutput+='\n';}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 183 "lex_analizer.l"
+#line 186 "lex_analizer.l"
 {commentOutput+=yytext;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 185 "lex_analizer.l"
+#line 188 "lex_analizer.l"
 {BEGIN COMMENT_STATE2; commentOutput+=yytext; initial_line=line_count;}
 	YY_BREAK
 case 27:
 /* rule 27 can match eol */
 YY_RULE_SETUP
-#line 186 "lex_analizer.l"
+#line 189 "lex_analizer.l"
 {line_count++;commentOutput+=yytext;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 187 "lex_analizer.l"
+#line 190 "lex_analizer.l"
 {commentOutput+=yytext;printComment(); commentOutput="";BEGIN INITIAL;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 188 "lex_analizer.l"
+#line 191 "lex_analizer.l"
 {commentOutput+=yytext;}
 	YY_BREAK
 case YY_STATE_EOF(COMMENT_STATE2):
-#line 189 "lex_analizer.l"
+#line 192 "lex_analizer.l"
 {++error_count; flog<<"\nError at line no "<<initial_line<<": Unterminated Comment "<<commentOutput<<endl; BEGIN INITIAL;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 191 "lex_analizer.l"
+#line 194 "lex_analizer.l"
 {BEGIN STRING_STATE; clearVar(); stringOutput+=yytext; stringLexeme+=yytext; initial_line=line_count;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 192 "lex_analizer.l"
+#line 195 "lex_analizer.l"
 {BEGIN INITIAL;stringOutput+=yytext; stringLexeme+=yytext; printString(); clearVar();}
 	YY_BREAK
 case 32:
 /* rule 32 can match eol */
 YY_RULE_SETUP
-#line 193 "lex_analizer.l"
+#line 196 "lex_analizer.l"
 {BEGIN INITIAL; line_count++; ++error_count; flog<<"\nError at line no "<<initial_line<<": Unterminated String "<<stringLexeme<<endl; clearVar();}
 	YY_BREAK
 case 33:
@@ -1159,12 +1162,12 @@ case 33:
 (yy_c_buf_p) = yy_cp -= 1;
 YY_DO_BEFORE_ACTION; /* set up yytext again */
 YY_RULE_SETUP
-#line 194 "lex_analizer.l"
+#line 197 "lex_analizer.l"
 {line_count++; stringLexeme+=yytext;yyinput(); stringLexeme+='\n';}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 195 "lex_analizer.l"
+#line 198 "lex_analizer.l"
 {char ch=mapSpecialChar(yytext);
 														if(ch!='w') stringOutput+=ch;
 														else stringOutput+=yytext;
@@ -1172,116 +1175,116 @@ YY_RULE_SETUP
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 199 "lex_analizer.l"
+#line 202 "lex_analizer.l"
 {stringOutput+=yytext; stringLexeme+=yytext;}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 200 "lex_analizer.l"
+#line 203 "lex_analizer.l"
 {stringOutput+=yytext; stringLexeme+=yytext;}
 	YY_BREAK
 case 37:
-#line 203 "lex_analizer.l"
-case 38:
-#line 204 "lex_analizer.l"
-case 39:
-#line 205 "lex_analizer.l"
-case 40:
 #line 206 "lex_analizer.l"
-case 41:
+case 38:
 #line 207 "lex_analizer.l"
-case 42:
+case 39:
 #line 208 "lex_analizer.l"
-case 43:
+case 40:
 #line 209 "lex_analizer.l"
-case 44:
+case 41:
 #line 210 "lex_analizer.l"
-case 45:
+case 42:
 #line 211 "lex_analizer.l"
-case 46:
+case 43:
 #line 212 "lex_analizer.l"
-case 47:
+case 44:
 #line 213 "lex_analizer.l"
-case 48:
+case 45:
 #line 214 "lex_analizer.l"
-case 49:
+case 46:
 #line 215 "lex_analizer.l"
-case 50:
+case 47:
 #line 216 "lex_analizer.l"
-case 51:
+case 48:
 #line 217 "lex_analizer.l"
+case 49:
+#line 218 "lex_analizer.l"
+case 50:
+#line 219 "lex_analizer.l"
+case 51:
+#line 220 "lex_analizer.l"
 case 52:
 YY_RULE_SETUP
-#line 217 "lex_analizer.l"
+#line 220 "lex_analizer.l"
 {printKeyword();}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 220 "lex_analizer.l"
+#line 223 "lex_analizer.l"
 {printID();}
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 222 "lex_analizer.l"
+#line 225 "lex_analizer.l"
 {printChar();}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 224 "lex_analizer.l"
+#line 227 "lex_analizer.l"
 {printNumber("CONST_INT");}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 226 "lex_analizer.l"
+#line 229 "lex_analizer.l"
 {printNumber("CONST_FLOAT");}
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 228 "lex_analizer.l"
+#line 231 "lex_analizer.l"
 {++error_count;flog<<"\nError at line no "<<line_count<<": Too many decimal points "<<yytext<<endl;}
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 229 "lex_analizer.l"
+#line 232 "lex_analizer.l"
 {++error_count; flog<<"\nError at line no "<<line_count<<": Ill formed number "<<yytext<<endl;}
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 230 "lex_analizer.l"
+#line 233 "lex_analizer.l"
 {++error_count; flog<<"\nError at line no "<<line_count<<": Invalid prefix on ID or invalid suffix on Number "<<yytext<<endl;}
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 231 "lex_analizer.l"
+#line 234 "lex_analizer.l"
 {++error_count; flog<<"\nError at line no "<<line_count<<": Empty character constant error "<<yytext<<endl;}
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 232 "lex_analizer.l"
+#line 235 "lex_analizer.l"
 {++error_count; flog<<"\nError at line no "<<line_count<<": Unterminated Character "<<yytext<<endl;}
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 233 "lex_analizer.l"
+#line 236 "lex_analizer.l"
 {++error_count; flog<<"\nError at line no "<<line_count<<": Multi character constant error "<<yytext<<endl;}
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(COMMENT_STATE):
 case YY_STATE_EOF(STRING_STATE):
-#line 235 "lex_analizer.l"
+#line 238 "lex_analizer.l"
 {symboltable->Print_All_ScopeTable(flog); flog<<"Total lines: "<<line_count<<endl; flog<<"Total errors: "<<error_count<<endl; return 0;}
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 237 "lex_analizer.l"
+#line 240 "lex_analizer.l"
 {++error_count; flog<<"\nError at line no "<<line_count<<": Unrecognized character "<<yytext<<endl;}
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 238 "lex_analizer.l"
+#line 241 "lex_analizer.l"
 ECHO;
 	YY_BREAK
-#line 1285 "lex_analizer.cpp"
+#line 1288 "lex_analizer.cpp"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2284,7 +2287,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 238 "lex_analizer.l"
+#line 241 "lex_analizer.l"
 
 
 int main(int argc,char *argv[]){
