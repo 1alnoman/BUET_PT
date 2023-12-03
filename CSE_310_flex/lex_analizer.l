@@ -164,9 +164,9 @@ error_empty_char \'\'
 [!] {printop("NOT");}
 [(] {printop("LPAREN");}
 [)] {printop("RPAREN");}
-"\n""\t"*"}" {prev_tabs--;line_count++;check_tab_warning(yytext); printop("RCURL"); symboltable->Exit_Scope();}
-"\n""\t"* {line_count++;check_tab_warning(yytext);}
-"\n""\t"*" "*"\t"* {line_count++; flog<<"Line no "<<line_count<<": Warning, tab requrired but got space.\n"<<endl;}
+"\n"+"\t"*"}" {prev_tabs--;line_count++;check_tab_warning(yytext); printop("RCURL"); symboltable->Exit_Scope();}
+"\n"+"\t"* {line_count++;check_tab_warning(yytext);}
+"\n"+"\t"*" "*"\t"* {line_count++; flog<<"Line no "<<line_count<<": Warning, tab requrired but got space.\n"<<endl;}
 {ws}+ {}
 {newline} {line_count++;}
 [{] {printop("LCURL"); symboltable->Enter_Scope();prev_tabs++;}

@@ -140,6 +140,8 @@ ScopeTable # 1
 
 Line no 8: Token <SEMICOLON> Lexeme ; found
 
+Line no 9: Warning, tab requrired but got space.
+
 Line no 9: Token <ID> Lexeme u found
 
 ScopeTable # 1.1
